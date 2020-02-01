@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 1613283992642924862}
   - component: {fileID: 2722258121358357649}
   - component: {fileID: 3154026241828714360}
+  - component: {fileID: 4342178249385398134}
   m_Layer: 0
   m_Name: Player Back Tread
   m_TagString: Untagged
@@ -279,7 +280,18 @@ MonoBehaviour:
   - {x: -0.6258186, y: -0.26084805, z: 0}
   m_ShapePathHash: -472528772
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51412
+  m_InstanceId: 53202
+--- !u!210 &4342178249385398134
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736378077756123121}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
 --- !u!1 &4156673864452662151
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +412,7 @@ MonoBehaviour:
   - {x: -0.5707466, y: 0.08746007, z: 0}
   m_ShapePathHash: -1917034576
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51506
+  m_InstanceId: 53298
 --- !u!1 &4407800292024822034
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +849,7 @@ MonoBehaviour:
   - {x: -0.6258186, y: -0.26084805, z: 0}
   m_ShapePathHash: -472528772
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51398
+  m_InstanceId: 53188
 --- !u!210 &8226491453089173707
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -875,7 +887,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5605258289116299501}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.024, y: -0.146, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children:
@@ -979,7 +991,7 @@ MonoBehaviour:
   - {x: -0.2442916, y: -0.2890809, z: 0}
   m_ShapePathHash: 1676269333
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51494
+  m_InstanceId: 53286
 --- !u!95 &3871027457396343651
 Animator:
   serializedVersion: 3
@@ -1118,7 +1130,7 @@ MonoBehaviour:
   - {x: -0.14460559, y: -0.2085441, z: 0}
   m_ShapePathHash: 1886899359
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51508
+  m_InstanceId: 53300
 --- !u!1 &6212278721784642016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1246,7 @@ MonoBehaviour:
   - {x: -0.264197, y: -0.08814922, z: 0}
   m_ShapePathHash: -1453907853
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51464
+  m_InstanceId: 53256
 --- !u!1 &6791697745185236612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6791697745185236612}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.662, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0.523, y: -0.47, z: 0}
   m_LocalScale: {x: 0.83, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2560694839892135187}
@@ -1432,7 +1444,7 @@ MonoBehaviour:
   - {x: -0.264197, y: -0.08814922, z: 0}
   m_ShapePathHash: -1274395621
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51394
+  m_InstanceId: 53184
 --- !u!1 &7268109700493530228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1645,7 @@ MonoBehaviour:
   - {x: -0.14605385, y: -0.09853515, z: 0}
   m_ShapePathHash: -1352530283
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51466
+  m_InstanceId: 53258
 --- !u!1 &9031106845172254653
 GameObject:
   m_ObjectHideFlags: 0
