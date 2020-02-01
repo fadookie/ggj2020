@@ -282,7 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1518d133348d4147bf8b9d07e4b9ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SystemNamespaces: []
+  SystemNamespaces:
+  - RuleEngine
 --- !u!114 &1504736810
 MonoBehaviour:
   m_ObjectHideFlags: 0
