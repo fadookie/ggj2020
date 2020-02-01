@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestEntity : MonoBehaviour
+public class Terminal : MonoBehaviour
 {
-    public bool isEnemy;
+    public bool isHacked;
     SpriteRenderer rend;
+
+    Color _origColor;
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
+        _origColor = rend.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rend.color = isEnemy ? Color.red : Color.white; 
+        rend.color = isHacked ? Color.white : _origColor;
     }
 }
