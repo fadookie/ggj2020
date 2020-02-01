@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4407800292024822035}
   - component: {fileID: 4407800292024822032}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4407800292138019525}
   - component: {fileID: 4407800292138019530}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: ArmPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4407800292606370202}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4407800292606370197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.62, z: 0}
+  m_LocalPosition: {x: 0, y: -0.699, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4407800293451428800}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4407800293295200042}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4407800293451428806}
   - component: {fileID: 4407800293451428801}
   - component: {fileID: 4407800293451428804}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 4407800293451428861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.73, y: -0.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 20}
   m_Children:
   - {fileID: 4407800292606370202}
   - {fileID: 4407800293295200042}
@@ -299,7 +299,7 @@ MonoBehaviour:
   - {x: -0.48334777, y: 0.48659354, z: 0}
   m_ShapePathHash: 1480276294
   m_Mesh: {fileID: 0}
-  m_InstanceId: 20258
+  m_InstanceId: -9254
 --- !u!114 &4407800293451428807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,13 +312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc14c313662795746ae79884a0524e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 100
+  m_JumpForce: 1000
   m_CrouchSpeed: 0.348
-  m_MovementSmoothing: 0.063
-  m_AirControl: 0
+  m_MovementSmoothing: 0.141
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   m_GroundCheck: {fileID: 4407800292606370202}
   m_CeilingCheck: {fileID: 4407800293295200042}
   m_CrouchDisableCollider: {fileID: 0}
@@ -345,11 +345,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 7
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &4407800293451428801
 BoxCollider2D:
@@ -375,7 +375,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
 --- !u!114 &4407800293451428804
 MonoBehaviour:
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 4407800293451428807}
-  runSpeed: 20
+  runSpeed: 700
   doingCoyoteTime: 0
   coyoteTime: 0.1
   once: 0
