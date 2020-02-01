@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHackController : MonoBehaviour
 {
-
+    
     public void ConnectToTerminal(Terminal termObj)
     {
 
