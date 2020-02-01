@@ -40,6 +40,16 @@ public class RulesEngineManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey("s")) {
+            foreach (var entity in entities) {
+                var movementComponent = entity.GetComponent<MovementComponent>();
+                if (movementComponent) {
+                    Destroy(movementComponent);
+                } else {
+                    entity.AddComponent<MovementComponent>();
+                }
+            }
+        }
         foreach (var system in systems.Where(s => s.NeedsUpdateTick())) {
             system.Execute(entities);
         }
