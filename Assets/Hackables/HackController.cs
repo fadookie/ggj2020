@@ -52,11 +52,13 @@ public class HackController : MonoBehaviour
         if(_hackObj != null && !_hackObj.isHacked)
         {
             _hackObj = null;
+            Player.ClearHackable();
         }
 
         if(_term != null && !_term.isHacked)
         {
             _term = null;
+            Player.ClearTerminal();
         }
 
         HackWindow.SetActive(_hackObj != null && _term != null);
