@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: 8f1a41ffa87691c4d943f56d89214195
+guid: 8cfc0c293671bc84db476a81472cfac3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1546147825549401075
-    second: Player Assembled
+      213: 2068828279870094263
+    second: Line Long
   - first:
-      213: 1332468535841192249
-    second: Player Head
+      213: 4906040946889080922
+    second: Line Medium
   - first:
-      213: 5985878759434049345
-    second: Player Back Arm
+      213: 6830024847245456157
+    second: Dot Normal
   - first:
-      213: -4274824136443623062
-    second: Player Arm
+      213: -5963089367476911241
+    second: Line Short
   - first:
-      213: -6634481745042263618
-    second: Player Body
+      213: -8494406188229782888
+    second: Dot Outline
   - first:
-      213: -1290311962049045373
-    second: Player Back Hand
-  - first:
-      213: 1493790709640307955
-    second: Player Back Tread
-  - first:
-      213: 7786034661760985191
-    second: Player Hand
-  - first:
-      213: 8264158425121620816
-    second: Player Tread
+      213: -2943151887304732516
+    second: L Curve
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -58,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -90,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -102,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,7 +105,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,7 +117,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,181 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Head
+      name: Line Long
       rect:
         serializedVersion: 2
-        x: 375
-        y: 275
-        width: 269
-        height: 306
-      alignment: 9
-      pivot: {x: 0.55, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 939f239d211ed7210800000000000000
-      internalID: 1332468535841192249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Back Arm
-      rect:
-        serializedVersion: 2
-        x: 692
-        y: 364
-        width: 100
-        height: 138
-      alignment: 9
-      pivot: {x: 0.35, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1475f94640d121350800000000000000
-      internalID: 5985878759434049345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Arm
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 366
-        width: 97
-        height: 139
-      alignment: 9
-      pivot: {x: 0.35, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a69030ec816cca4c0800000000000000
-      internalID: -4274824136443623062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Body
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 25
-        width: 126
-        height: 236
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb131fdf0069de3a0800000000000000
-      internalID: -6634481745042263618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Back Hand
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 170
-        width: 76
-        height: 90
-      alignment: 9
-      pivot: {x: 0.5, y: 0.9}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38c11ac5b14e71ee0800000000000000
-      internalID: -1290311962049045373
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Back Tread
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 200
-        width: 284
-        height: 128
-      alignment: 9
-      pivot: {x: 0.55, y: 0.8}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f4a3e86cb20bb410800000000000000
-      internalID: 1493790709640307955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Hand
-      rect:
-        serializedVersion: 2
-        x: 580
-        y: 40
-        width: 76
-        height: 89
-      alignment: 9
-      pivot: {x: 0.5, y: 0.9}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 768642fc54d8d0c60800000000000000
-      internalID: 7786034661760985191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Tread
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 43
-        width: 285
-        height: 126
-      alignment: 9
-      pivot: {x: 0.55, y: 0.8}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0530de06d4030b270800000000000000
-      internalID: 8264158425121620816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Assembled
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 372
-        height: 579
+        x: 14
+        y: 9
+        width: 16
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,8 +142,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fb5d186145057510800000000000000
-      internalID: 1546147825549401075
+      spriteID: 7bb70f20c54f5bc10800000000000000
+      internalID: 2068828279870094263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line Medium
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 9
+        width: 23
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5048d47f32c51440800000000000000
+      internalID: 4906040946889080922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dot Normal
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 113
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13382b596f19ce50800000000000000
+      internalID: 6830024847245456157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line Short
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 8
+        width: 18
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77341a760d9de3da0800000000000000
+      internalID: -5963089367476911241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dot Outline
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 60
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8921facb39ecd1a80800000000000000
+      internalID: -8494406188229782888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L Curve
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 12
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c905e25b3f2d727d0800000000000000
+      internalID: -2943151887304732516
       vertices: []
       indices: 
       edges: []
