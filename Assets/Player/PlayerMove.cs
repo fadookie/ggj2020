@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public CharacterController2D controller;
-    public float runSpeed = 40;
+    private CharacterController2D controller;
 
     float horizontalInput;
     float horizontalMove;
@@ -15,16 +14,17 @@ public class PlayerMove : MonoBehaviour
     public bool once;
     public bool doJump;
     public int jumpCount;
-    void Start()
-    {
-        
+    
+    void Start() {
+        controller = GetComponent<CharacterController2D>();
     }
 
-    private void Update()
-    {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        jump = Input.GetButtonDown("Jump");
-        if (jump)
+    private void Update() {
+        var movementComponent = GetComponent<MovementComponent>();
+
+        if (!movementComponent) return;
+        
+        if (movementComponent.jump)
         {
             //controller.jumpCounter += 1;
         }
@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
 
         doJump = doingCoyoteTime || controller.m_Grounded;
 
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, doJump && jump);
+        controller.Move(movementComponent.horizontalMove * Time.fixedDeltaTime, false, doJump && movementComponent.jump);
     }
 
     void endCoyoteTime()
