@@ -28,7 +28,15 @@ public class PlatformMovementSystem : ISystem
         
         foreach (var component in movementComponents) {
             var transform = component.gameObject.transform.localPosition;
-            transform.y = component.initialPosition.y + Mathf.Sin(Time.time * component.oscillationSpeed) * component.oscillationAmplitude;
+            var oscillation = Mathf.Sin(Time.time * component.oscillationSpeed) * component.oscillationAmplitude;
+            switch (component.oscillationDirection) {
+                case OscillationDirection.Horizontal:
+                    transform.x = component.initialPosition.x + oscillation;
+                    break;
+                case OscillationDirection.Vertical:
+                    transform.y = component.initialPosition.y + oscillation;
+                    break;
+            }
             component.gameObject.transform.localPosition = transform;
         }
     }
