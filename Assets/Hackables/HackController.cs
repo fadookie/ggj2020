@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HackController : MonoBehaviour
 {
+    public PlayerHackController Player;
     public GameObject HackWindow;
 
     Hackable _hackObj;
@@ -33,9 +34,9 @@ public class HackController : MonoBehaviour
                         }
                     }
 
-
                     _hackObj = tmpHackable;
                     _hackObj.isHacked = !_hackObj.isHacked;
+                    Player.ConnectToHackable(_hackObj);
                 }
 
                 // clicked a Terminal
@@ -43,6 +44,7 @@ public class HackController : MonoBehaviour
                 {
                     _term = tmpTerm;
                     _term.isHacked = !_term.isHacked;
+                    Player.ConnectToTerminal(_term);
                 }
             }
         }
@@ -50,11 +52,13 @@ public class HackController : MonoBehaviour
         if(_hackObj != null && !_hackObj.isHacked)
         {
             _hackObj = null;
+            Player.ClearHackable();
         }
 
         if(_term != null && !_term.isHacked)
         {
             _term = null;
+            Player.ClearTerminal();
         }
 
         HackWindow.SetActive(_hackObj != null && _term != null);
