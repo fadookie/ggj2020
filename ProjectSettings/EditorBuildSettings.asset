@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelController.unity
     guid: d964599de77c0524cbbaee7d73aee3e0
   - enabled: 1
+    path: Assets/Scenes/garrett test level original.unity
+    guid: c6144e33f97424a419a8ec483a6417bd
+  - enabled: 0
+    path: Assets/Scenes/garrett test 2.unity
+    guid: bc520f23f78cc470492dd54d424c03af
+  - enabled: 1
     path: Assets/Scenes/TestHack.unity
     guid: 11778cc26d78dce45bd9f3ef8d69a7ac
   m_configObjects: {}
