@@ -44,33 +44,32 @@ public class RulesEngineManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKey("s")) {
-            foreach (var entity in entities) {
-                var movementComponent = entity.GetComponent<MovementComponent>();
-//                if (movementComponent) {
-                if (false) {
-                    Destroy(movementComponent);
-                } else {
-                    CopyPlayerComponentIfNeeded<CharacterController2D>(entity);
-                    CopyPlayerComponentIfNeeded<Rigidbody2D>(entity);
-                    CopyPlayerComponentIfNeeded<BoxCollider2D>(entity);
-                    var boxCollider = GetComponent<BoxCollider2D>();
-                    var characterController = GetComponent<CharacterController2D>();
-                    if (characterController?.m_GroundCheck == null) {
-//                        var groundCheck = (GameObject)GameObject.Instantiate(null, entity.transform);
-                        var groundCheck = new GameObject("Ground Check");
-                        groundCheck.AddComponent<RectTransform>();
-                        groundCheck.transform.parent = characterController.transform;
-                        var position = Vector3.zero;
-                        position.y = boxCollider.offset.y + boxCollider.size.y;
-                        groundCheck.transform.localPosition = position;
-                    }
-                    
-                    if (!entity.GetComponent<PlayerMove>()) {
-                        entity.AddComponent<PlayerMove>();
-                    }
-                    if (!entity.GetComponent<MovementComponent>()) {
-                        entity.AddComponent<MovementComponent>();
-                    }
+            var movementComponent = key.GetComponent<MovementComponent>();
+    //                if (movementComponent) {
+            if (false) {
+                Destroy(movementComponent);
+            } else {
+                CopyPlayerComponentIfNeeded<CharacterController2D>(key);
+                CopyPlayerComponentIfNeeded<Rigidbody2D>(key);
+                CopyPlayerComponentIfNeeded<BoxCollider2D>(key);
+                var boxCollider = key.GetComponent<BoxCollider2D>();
+                var characterController = key.GetComponent<CharacterController2D>();
+                if (characterController != null) {
+    //                        var groundCheck = (GameObject)GameObject.Instantiate(null, entity.transform);
+                    var groundCheck = new GameObject("Ground Check");
+                    groundCheck.AddComponent<Transform>();
+                    var position = Vector3.zero;
+                    position.y = boxCollider.offset.y + boxCollider.size.y;
+                    groundCheck.transform.localPosition = position;
+                    groundCheck.transform.parent = characterController.transform;
+                    characterController.m_GroundCheck = groundCheck.transform;
+                }
+                
+                if (!key.GetComponent<PlayerMove>()) {
+                    key.AddComponent<PlayerMove>();
+                }
+                if (!key.GetComponent<MovementComponent>()) {
+                    key.AddComponent<MovementComponent>();
                 }
             }
         }
