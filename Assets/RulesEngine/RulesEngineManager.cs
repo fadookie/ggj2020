@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using RulesEngine.Components;
 using UnityEngine;
 
 public class RulesEngineManager : MonoBehaviour
 {
     public GameObject player;
-    public GameObject key;
+    public GameObject hackable;
+    public GameObject[] hackables;
     
     private List<ISystem> systems;
     private List<GameObject> entities;
@@ -28,32 +30,43 @@ public class RulesEngineManager : MonoBehaviour
         systems.Add(inputSystem);
 
         systems.Add(new MovementSystem());
+        systems.Add(new PlatformMovementSystem());
 
         //Initialize entities and components 
         entities.Add(player);
-        player.AddComponent<MovementComponent>();
+        player.AddComponent<PlayerMovementComponent>();
         
-        entities.Add(key);
+        entities.Add(hackable);
+        hackable.AddComponent<PlatformMovementComponent>();
+
+        entities.InsertRange(entities.Count - 1, hackables);
         
         foreach (var system in systems) {
-            system.Setup();
+            system.Setup(entities);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey("h")) {
+            foreach (var hackable in hackables) {
+                if (hackable.GetComponent<PlatformMovementComponent>() == null) {
+                    hackable.AddComponent<PlatformMovementComponent>();
+                }
+            }
+        }
         if (Input.GetKey("s")) {
-            var movementComponent = key.GetComponent<MovementComponent>();
+            var movementComponent = hackable.GetComponent<PlayerMovementComponent>();
     //                if (movementComponent) {
             if (false) {
                 Destroy(movementComponent);
             } else {
-                CopyPlayerComponentIfNeeded<CharacterController2D>(key);
-                CopyPlayerComponentIfNeeded<Rigidbody2D>(key);
-                CopyPlayerComponentIfNeeded<BoxCollider2D>(key);
-                var boxCollider = key.GetComponent<BoxCollider2D>();
-                var characterController = key.GetComponent<CharacterController2D>();
+                CopyPlayerComponentIfNeeded<CharacterController2D>(hackable);
+                CopyPlayerComponentIfNeeded<Rigidbody2D>(hackable);
+                CopyPlayerComponentIfNeeded<BoxCollider2D>(hackable);
+                var boxCollider = hackable.GetComponent<BoxCollider2D>();
+                var characterController = hackable.GetComponent<CharacterController2D>();
                 if (characterController != null) {
     //                        var groundCheck = (GameObject)GameObject.Instantiate(null, entity.transform);
                     var groundCheck = new GameObject("Ground Check");
@@ -65,14 +78,15 @@ public class RulesEngineManager : MonoBehaviour
                     characterController.m_GroundCheck = groundCheck.transform;
                 }
                 
-                if (!key.GetComponent<PlayerMove>()) {
-                    key.AddComponent<PlayerMove>();
+                if (!hackable.GetComponent<PlayerMove>()) {
+                    hackable.AddComponent<PlayerMove>();
                 }
-                if (!key.GetComponent<MovementComponent>()) {
-                    key.AddComponent<MovementComponent>();
+                if (!hackable.GetComponent<PlayerMovementComponent>()) {
+                    hackable.AddComponent<PlayerMovementComponent>();
                 }
             }
         }
+        
         foreach (var system in systems.Where(s => s.NeedsUpdateTick())) {
             system.Execute(entities);
         }

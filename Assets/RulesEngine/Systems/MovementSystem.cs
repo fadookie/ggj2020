@@ -5,7 +5,7 @@ using System.Linq;
 
 public class MovementSystem : ISystem
 {
-    public void Setup() {
+    public void Setup(IList<GameObject> objects) {
     }
 
     public bool NeedsUpdateTick() {

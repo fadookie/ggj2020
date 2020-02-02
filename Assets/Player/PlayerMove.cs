@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     private void Update() {
-        var movementComponent = GetComponent<MovementComponent>();
+        var movementComponent = GetComponent<PlayerMovementComponent>();
 
         if (!movementComponent) return;
         

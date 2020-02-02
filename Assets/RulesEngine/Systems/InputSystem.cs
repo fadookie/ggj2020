@@ -7,10 +7,10 @@ using System.Linq;
 
 public class InputSystem : ISystem
 {
-    public delegate void ExecutorDelegate(MovementComponent component);
+    public delegate void ExecutorDelegate(PlayerMovementComponent component);
     public ExecutorDelegate Executor { get; set; }
 
-    public void Setup() {
+    public void Setup(IList<GameObject> objects) {
     }
 
     public bool NeedsUpdateTick() {
@@ -19,7 +19,7 @@ public class InputSystem : ISystem
 
     public void Execute(IList<GameObject> objects) {
         var movementComponents = objects
-            .Select(x => x.GetComponent<MovementComponent>())
+            .Select(x => x.GetComponent<PlayerMovementComponent>())
             .Where(x => x);
         
         foreach (var component in movementComponents) {

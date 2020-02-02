@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface ISystem
 {
-    void Setup();
+    void Setup(IList<GameObject> objects);
 
     bool NeedsUpdateTick();
     
