@@ -10,7 +10,7 @@ public class InputSystem : ISystem
     public delegate void ExecutorDelegate(PlayerMovementComponent component);
     public ExecutorDelegate Executor { get; set; }
 
-    public void Setup(IList<GameObject> objects) {
+    public void Setup(GameObject entity) {
     }
 
     public bool NeedsUpdateTick() {

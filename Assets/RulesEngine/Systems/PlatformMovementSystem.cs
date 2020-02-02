@@ -12,7 +12,11 @@ public class PlatformMovementSystem : ISystem
             .Where(x => x);
     }
     
-    public void Setup(IList<GameObject> objects) {
+    public void Setup(GameObject entity) {
+        var component = entity.GetComponent<PlatformMovementComponent>();
+        if (component != null) {
+            component.initialPosition = component.gameObject.transform.position;
+        }
     }
 
     public bool NeedsUpdateTick() {
@@ -23,10 +27,6 @@ public class PlatformMovementSystem : ISystem
         var movementComponents = GetPlatformComponents(objects);
         
         foreach (var component in movementComponents) {
-            if (component.initialPosition == Vector3.zero) {
-                component.initialPosition = component.gameObject.transform.position;
-            }
-            
             var transform = component.gameObject.transform.localPosition;
             transform.y = component.initialPosition.y + Mathf.Sin(Time.time * component.oscillationSpeed) * component.oscillationAmplitude;
             component.gameObject.transform.localPosition = transform;

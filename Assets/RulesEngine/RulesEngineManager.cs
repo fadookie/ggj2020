@@ -34,15 +34,18 @@ public class RulesEngineManager : MonoBehaviour
 
         //Initialize entities and components 
         entities.Add(player);
-        player.AddComponent<PlayerMovementComponent>();
+        AddComponentToEntity<PlayerMovementComponent>(player);
         
         entities.Add(hackable);
-        hackable.AddComponent<PlatformMovementComponent>();
+        AddComponentToEntity<PlatformMovementComponent>(hackable);
 
         entities.InsertRange(entities.Count - 1, hackables);
-        
+    }
+
+    void AddComponentToEntity<T>(GameObject entity) where T : Component {
+        entity.AddComponent<T>();
         foreach (var system in systems) {
-            system.Setup(entities);
+            system.Setup(entity);
         }
     }
 
@@ -52,41 +55,41 @@ public class RulesEngineManager : MonoBehaviour
         if (Input.GetKey("h")) {
             foreach (var hackable in hackables) {
                 if (hackable.GetComponent<PlatformMovementComponent>() == null) {
-                    hackable.AddComponent<PlatformMovementComponent>();
+                    AddComponentToEntity<PlatformMovementComponent>(hackable);
                 }
             }
         }
-        if (Input.GetKey("s")) {
-            var movementComponent = hackable.GetComponent<PlayerMovementComponent>();
-    //                if (movementComponent) {
-            if (false) {
-                Destroy(movementComponent);
-            } else {
-                CopyPlayerComponentIfNeeded<CharacterController2D>(hackable);
-                CopyPlayerComponentIfNeeded<Rigidbody2D>(hackable);
-                CopyPlayerComponentIfNeeded<BoxCollider2D>(hackable);
-                var boxCollider = hackable.GetComponent<BoxCollider2D>();
-                var characterController = hackable.GetComponent<CharacterController2D>();
-                if (characterController != null) {
-    //                        var groundCheck = (GameObject)GameObject.Instantiate(null, entity.transform);
-                    var groundCheck = new GameObject("Ground Check");
-                    groundCheck.AddComponent<Transform>();
-                    var position = Vector3.zero;
-                    position.y = boxCollider.offset.y + boxCollider.size.y;
-                    groundCheck.transform.localPosition = position;
-                    groundCheck.transform.parent = characterController.transform;
-                    characterController.m_GroundCheck = groundCheck.transform;
-                }
-                
-                if (!hackable.GetComponent<PlayerMove>()) {
-                    hackable.AddComponent<PlayerMove>();
-                }
-                if (!hackable.GetComponent<PlayerMovementComponent>()) {
-                    hackable.AddComponent<PlayerMovementComponent>();
-                }
-            }
-        }
-        
+//        if (Input.GetKey("s")) {
+//            var movementComponent = hackable.GetComponent<PlayerMovementComponent>();
+//    //                if (movementComponent) {
+//            if (false) {
+//                Destroy(movementComponent);
+//            } else {
+//                CopyPlayerComponentIfNeeded<CharacterController2D>(hackable);
+//                CopyPlayerComponentIfNeeded<Rigidbody2D>(hackable);
+//                CopyPlayerComponentIfNeeded<BoxCollider2D>(hackable);
+//                var boxCollider = hackable.GetComponent<BoxCollider2D>();
+//                var characterController = hackable.GetComponent<CharacterController2D>();
+//                if (characterController != null) {
+//    //                        var groundCheck = (GameObject)GameObject.Instantiate(null, entity.transform);
+//                    var groundCheck = new GameObject("Ground Check");
+//                    groundCheck.AddComponent<Transform>();
+//                    var position = Vector3.zero;
+//                    position.y = boxCollider.offset.y + boxCollider.size.y;
+//                    groundCheck.transform.localPosition = position;
+//                    groundCheck.transform.parent = characterController.transform;
+//                    characterController.m_GroundCheck = groundCheck.transform;
+//                }
+//                
+//                if (!hackable.GetComponent<PlayerMove>()) {
+//                    hackable.AddComponent<PlayerMove>();
+//                }
+//                if (!hackable.GetComponent<PlayerMovementComponent>()) {
+//                    hackable.AddComponent<PlayerMovementComponent>();
+//                }
+//            }
+//        }
+//        
         foreach (var system in systems.Where(s => s.NeedsUpdateTick())) {
             system.Execute(entities);
         }
